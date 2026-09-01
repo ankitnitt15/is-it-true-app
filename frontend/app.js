@@ -1,5 +1,3 @@
-// Edit this before deploying -- there's no build step, so the backend URL is
-// just a constant. Point it at your Render/Fly.io backend's public URL.
 const API_BASE_URL = "http://localhost:8000";
 
 const textInput = document.getElementById("text-input");
