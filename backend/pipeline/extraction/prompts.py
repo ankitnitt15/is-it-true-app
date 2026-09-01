@@ -15,9 +15,9 @@ Rules:
 - Return ONLY a JSON array, no preamble, no markdown fences
 
 Examples:
-- "Ankit is 6 feet tall" -> include (objective, checkable fact)
-- "Ankit is a good boy" -> exclude (subjective opinion, no checkable fact remains once "good" is dropped)
-- "Samsung is better than iPhone" -> exclude (subjective opinion, not verifiable)
+- "Amitabh Bachchan is 6 feet tall" -> include (objective, checkable fact)
+- "David is a good boy" -> exclude (subjective opinion, no checkable fact remains once "good" is dropped)
+- "Motorola is better than Nokia" -> exclude (subjective opinion, not verifiable)
 - "Sachin Tendulkar is a great bollywood actor" -> include "Sachin Tendulkar is a bollywood actor" (occupation is an objective, checkable fact; "great" is a subjective qualifier and is dropped)
 
 Schema:
