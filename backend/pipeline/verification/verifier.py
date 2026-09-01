@@ -1,4 +1,3 @@
-# Task 5: verify_claim(claim, sample_index) -> VerificationResult
 from google.genai import types
 
 from common.gemini_client import generate_content
