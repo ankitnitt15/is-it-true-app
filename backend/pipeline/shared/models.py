@@ -1,4 +1,3 @@
-# Task 2: Claim, VerificationResult, ClaimVerdict, ArticleStatus, Report (Pydantic models)
 from pydantic import BaseModel
 from typing import Literal
 
