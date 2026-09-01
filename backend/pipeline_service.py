@@ -21,9 +21,8 @@ def run_fact_check_stream(
     image_bytes: bytes | None = None,
     image_mime_type: str | None = None,
 ):
-    """Generator yielding progress events as the pipeline runs -- the same
-    extract -> verify -> aggregate -> synthesize pipeline as
-    systems/FactCheckerAgent/pipeline.py, restructured so api/routes.py can
+    """Generator yielding progress events as the pipeline runs,
+    api/routes.py can
     stream it live (SSE) instead of only returning a single blocking
     response. Always ends with a "done" event; run_fact_check() below
     drains this for callers that just want the final result.
