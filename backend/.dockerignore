@@ -1,0 +1,12 @@
+.env
+.venv/
+.venv_test/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+tests/
+conftest.py
+pytest.ini
+.coveragerc
+requirements-dev.txt

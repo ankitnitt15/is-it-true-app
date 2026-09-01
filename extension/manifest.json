@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "IsItTrue",
+  "version": "0.1.0",
+  "description": "Right-click selected text or an image on any page to check it for false claims.",
+  "permissions": ["contextMenus", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
