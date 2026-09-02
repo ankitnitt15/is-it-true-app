@@ -1,7 +1,7 @@
 // Edit this before distributing the extension -- point it at your deployed
 // backend, and add this extension's chrome-extension://<id> origin to the
 // backend's CORS_ORIGINS once you know the id (see the extension's README).
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = "https://is-it-true-1jug.onrender.com";
 
 const statusEl = document.getElementById("status");
 const statusTextEl = document.getElementById("status-text");
