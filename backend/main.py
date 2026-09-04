@@ -24,6 +24,7 @@ app = FastAPI(title="IsItTrue API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=config.CORS_ORIGINS,
+    allow_origin_regex=r"^chrome-extension://.*$",
     allow_methods=["GET", "POST"],
     allow_headers=["*"],
     allow_credentials=True,
