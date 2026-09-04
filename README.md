@@ -127,19 +127,19 @@ downstream, and the confidence-floor clamp).
 
 1. In Chrome/Edge, go to `chrome://extensions`, enable "Developer mode",
    click "Load unpacked", and select `extension/`.
-2. Copy the extension's id from that page (looks like
-   `chrome-extension://abcdefghijklmnop...`) and add it to the backend's
-   `CORS_ORIGINS` (comma-separated alongside the frontend's origin), then
-   restart the backend.
-3. `extension/results.js`'s `API_BASE_URL` defaults to
+2. `extension/results.js`'s `API_BASE_URL` defaults to
    `http://localhost:8000` — edit it if your backend runs elsewhere.
-4. Select text on any page (or right-click an image) → "Check this
+3. Select text on any page (or right-click an image) → "Check this
    text/image with IsItTrue" → a results tab opens and shows the
    verdicts.
 
-Unpacked extension ids can change across reloads unless the manifest pins a
-`key` — for local testing just re-copy the id into `CORS_ORIGINS` if it
-changes. Right-clicking an image fetches its bytes from the page it's on;
+No CORS setup needed for the extension itself: the backend's CORS config
+(`main.py`) accepts any `chrome-extension://` origin via
+`allow_origin_regex`, since every unpacked install gets its own randomly
+generated id (there's no fixed list to maintain without Chrome Web Store
+publishing, which assigns one shared id). Rate limits/cost caps still
+apply regardless of origin. Right-clicking an image fetches its bytes from
+the page it's on;
 some sites' own CORS policy may block that fetch (a known limitation, not
 something this app controls) — `results.js` shows a clear message and
 suggests using the web app's attach-image option instead when that happens.
