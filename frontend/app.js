@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = "https://is-it-true-1jug.onrender.com";
 
 const textInput = document.getElementById("text-input");
 const charCount = document.getElementById("char-count");
