@@ -1,3 +1,5 @@
+import datetime
+
 from google.genai import types
 
 from common.gemini_client import generate_content
@@ -9,12 +11,18 @@ VERIFICATION_TEMPERATURE = 0.7
 CONFIDENCE_FLOOR = 0.4
 
 def verify_claim(
-    claim: Claim,
-    sample_index: int,
-    image_bytes: bytes | None = None,
-    image_mime_type: str | None = None,
+        claim: Claim,
+        sample_index: int,
+        image_bytes: bytes | None = None,
+        image_mime_type: str | None = None,
 ) -> VerificationResult:
-    prompt = build_verification_prompt(claim.text)
+    # The model has no built-in sense of "now" -- without telling it today's
+    # date, it has no way to reason about whether a scheduled/anticipated
+    # event has already happened, and will confidently (and wrongly) claim
+    # real events "haven't happened yet" if they're near/after its training
+    # cutoff. See verification/prompts.py for the full reasoning.
+    today = datetime.date.today().isoformat()
+    prompt = build_verification_prompt(claim.text, today)
     contents = [prompt]
     if image_bytes is not None:
         # Re-attach the same image the claim was extracted from -- without
