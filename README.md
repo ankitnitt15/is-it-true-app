@@ -228,8 +228,6 @@ and `app.js`'s `API_BASE_URL` at each other's real deployed URLs.
 
 - Rate-limit identity (cookie/IP) is a soft signal, not a real account
   system — it can be bypassed. The global daily cap is the actual backstop.
-- No durable analytics beyond what Upstash/Render's own dashboards show;
-  add a proper database if you need more than that later.
 - `pipeline/` only uses the model's own knowledge, same as the original
   prototype — no live web search, so very recent events may come back
   `UNVERIFIABLE` rather than checked against a source. Time-sensitive facts
